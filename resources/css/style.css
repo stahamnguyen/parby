@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    color: #555555;
+    font-family: 'Arial', 'sans-serif';
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.sticky {
+    position: fixed;
+    z-index: 1;
+}
+.bar {
+    height: 40px;
+    width: 100%;
+    background-color: #ffffff;
+    font-size: 0;
+}
+nav div {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+
+/*  ***************************************************
+                        Navbar
+***************************************************  */
+
+
+#navbar {
+    border-bottom: 1px solid #eeeeee;
+}
+#logo {
+    width: 60%;
+    padding-top: 7px;
+    text-align: center;
+}
+#message-icon,
+#burger-icon {
+    width: 20%;
+    padding: 0 15px;
+    margin-top: 0;
+}
+#message-icon {
+    text-align: right;
+}
+i {
+    color: #555555;
+}
+i:hover {
+    color: #02B3E4;
+    cursor: pointer;
+}
+
+
+/*  ***************************************************
+                        Post
+***************************************************  */
+
+
+/* Header */
+
+.container {
+    background-color: #f5f5f5;
+    top: 40px;
+    padding: 20px 0 30px 0;
+    position: absolute;
+    width: 100%;
+}
+.post {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.post-header {
+    padding: 15px;
+    font-size: 14px;
+    color: #555555;
+}
+.post-avatar, .post-user-info, .post-detail-btn {
+    display: inline-block;
+}
+.post-avatar {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    border: 1px solid #cccccc;
+}
+.post-user-info {
+    margin-left: 15px;
+}
+strong {
+    font-weight: bold;
+}
+.post-detail-btn {
+    float: right;
+    font-size: 20px;
+}
+
+/* Image */
+
+.post-img-content img {
+    width: 100%;
+    display: block;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+
+/* Interactions */
+
+.interactions {
+    padding: 15px;
+    /* background-color: blue; */
+}
+.interactions div {
+    display: inline-block;
+}
+.bookmark-btn {
+    margin-right: 15px;
+}
+.like-btn {
+    position: absolute;
+    right: 15px;
+    border-radius: 5px;
+    border: 1px solid #555555;
+    padding: 3px;
+    font-size: 14px;
+}
+.like-btn span {
+    position: relative;
+    bottom: 2px;
+}
+.like-btn i {
+    position: relative;
+    font-size: 20px;
+    margin-left: 3px;
+}
+.like-btn:hover, .like-btn:hover * {
+    color: #ffffff;
+    background-color: #02B3E4;
+    border-color: #02B3E4;
+    cursor: pointer;
+}
+
+/* Interactions */
+
+.time {
+    padding-left: 15px;
+    font-size: 12px;
+    font-weight: lighter;
+    color: #888888;
+}
+
+/* Caption */
+
+.caption {
+    padding: 15px;
+    font-size: 14px;
+}
+
+
+/*  ***************************************************
+                        Tabbar
+***************************************************  */
+
+
+#tabbar {
+    border-top: 1px solid #eeeeee;
+    bottom: 0;
+}
+#tabbar nav div {
+    width: 20%;
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+
