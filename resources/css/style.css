@@ -128,6 +128,8 @@ strong {
     display: inline-block;
 }
 .bookmark-btn {
+    position: relative;
+    top: 2px;
     margin-right: 15px;
 }
 .like-btn {
