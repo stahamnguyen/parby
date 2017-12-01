@@ -5,6 +5,7 @@
 }
 html {
     color: #555555;
+    background-color: #f5f5f5;
     font-family: 'Arial', 'sans-serif';
     font-size: 20px;
     font-weight: 300;
@@ -74,8 +75,6 @@ i:hover {
 ***************************************************  */
 
 
-/* Header */
-
 .container {
     background-color: #f5f5f5;
     top: 40px;
@@ -88,6 +87,9 @@ i:hover {
     border-radius: 10px;
     margin-bottom: 30px;
 }
+
+/* Header */
+
 .post-header {
     padding: 15px;
     font-size: 14px;
@@ -193,6 +195,9 @@ strong {
     text-align: center;
     position: relative;
     top: 10px;
+}
+#uploadImg {
+    display: none;
 }
 
 /*  ***************************************************
