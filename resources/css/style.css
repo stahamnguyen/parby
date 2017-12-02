@@ -31,11 +31,35 @@ section {
     background-color: #ffffff;
     font-size: 0;
 }
-nav div {
+nav div,
+nav form {
     box-sizing: border-box;
     display: inline-block;
     font-size: 20px;
     vertical-align: middle;
+}
+i {
+    color: #555555;
+}
+i:hover {
+    color: #02B3E4;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+@media only screen and (min-width: 768px) {
+    .hidden-min-768 {
+        display: none;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .hidden-max-768 {
+        display: none;
+    }
+}
+::placeholder {
+    font-size: 14px;
 }
 
 
@@ -47,26 +71,114 @@ nav div {
 #navbar {
     border-bottom: 1px solid #eeeeee;
 }
+#navbar nav {
+    margin: 0 auto;
+    max-width: 900px;
+}
 #logo {
-    width: 60%;
     padding-top: 7px;
-    text-align: center;
 }
-#message-icon,
-#burger-icon {
-    width: 20%;
-    padding: 0 15px;
-    margin-top: 0;
+@media only screen and (min-width: 768px) {
+    #logo {
+        width: 20%;
+        text-align: right;
+    }
+    #searchbar {
+        padding: 0 0 0 10px;
+        width: 30%;
+        /* background-color: red; */
+    }
+    #searchbar input[type="text"] {
+        width: 85%;
+        padding: 4px 5px;
+        font-size: 14px;
+        margin: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border: 1px solid #eeeeee;
+    }
+    #searchbar input:focus {
+        outline: none;
+    }
+    #searchbar button {
+        width: 10%;
+        vertical-align: middle;
+        padding: 3px 0 5px 0;
+        background-color: #02ccba;
+        background-repeat:no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+        outline:none;
+        margin: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        font-size: 16px;
+    }
+    #blank {
+        width: 20%;
+    }
+    #home-btn-nav, #notification-btn-nav, #message-btn, #profile-btn-nav, #camera-btn-nav {
+        width: 6%;
+    }
+    #camera-btn-nav {
+        font-size: 18px;
+        padding-top: 2px;
+    }
+    #navbar button:hover {
+        background-color: #03bdaa;
+    }
+    #navbar i:hover {
+        color: #02ccba;
+    }
+    #searchbar i:hover {
+        color: #ffffff;
+    }
 }
-#message-icon {
-    text-align: right;
+@media only screen and (max-width: 768px) {
+    #logo {
+        width: 60%;
+        text-align: center;
+    }
+    #message-btn,
+    #burger-btn {
+        width: 20%;
+        padding: 0 15px;
+        margin-top: 0;
+    }
+    #message-btn {
+        text-align: right;
+    }
 }
-i {
-    color: #555555;
+#logo span {
+    position: relative;
+    bottom: 7px;
+    color: #ffffff;
 }
-i:hover {
-    color: #02B3E4;
-    cursor: pointer;
+.container {
+    background-color: #f5f5f5;
+    top: 40px;
+    position: absolute;
+    width: 100%;
+}
+@media only screen and (max-width: 767px) {
+    .container-padding {
+        padding: 20px 0 40px 0;
+    }
+    .navbar-color {
+        background-color: #ffffff;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .container-padding {
+        padding: 20px 0 0 0;
+    }
+    .navbar-color {
+        background-color: #02B3E4;
+    }
+    #navbar i {
+        color: #ffffff;
+    }
 }
 
 
@@ -75,17 +187,12 @@ i:hover {
 ***************************************************  */
 
 
-.container {
-    background-color: #f5f5f5;
-    top: 40px;
-    padding: 20px 0 30px 0;
-    position: absolute;
-    width: 100%;
-}
 .post {
     background-color: white;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin: 0 auto 20px auto;
+    max-width: 400px;
+    border: 1px solid #eeeeee;
 }
 
 /* Header */
@@ -109,6 +216,13 @@ i:hover {
 .post-user-info {
     margin-left: 15px;
 }
+.post-user-info a {
+    color: #555555;
+}
+.post-user-info a:hover {
+    text-decoration: underline;
+    color: #02B3E4;
+}
 strong {
     font-weight: bold;
 }
@@ -129,8 +243,8 @@ strong {
 /* Interactions */
 
 .interactions {
+    position: relative;
     padding: 15px;
-    /* background-color: blue; */
 }
 .interactions div {
     display: inline-block;
@@ -144,7 +258,8 @@ strong {
     position: absolute;
     right: 15px;
     border-radius: 5px;
-    border: 1px solid #555555;
+    border: 1px solid #02ccba;
+    color: #02ccba;
     padding: 3px;
     font-size: 14px;
 }
@@ -156,11 +271,12 @@ strong {
     position: relative;
     font-size: 20px;
     margin-left: 3px;
+    color: #02ccba;
 }
 .like-btn:hover, .like-btn:hover * {
     color: #ffffff;
-    background-color: #02B3E4;
-    border-color: #02B3E4;
+    background-color: #02ccba;
+    border-color: #02ccba;
     cursor: pointer;
 }
 
@@ -199,6 +315,7 @@ strong {
 #uploadImg {
     display: none;
 }
+
 
 /*  ***************************************************
                         Toan's custom
