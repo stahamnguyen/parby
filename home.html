@@ -24,7 +24,7 @@
                     <span class="hidden-max-768">Parby</span>
                 </a>
             </div>
-            <form id="searchbar" class="hidden-max-768">
+            <form id="searchbar" class="hidden-max-768" action="">
                 <input type="text" name="search-item" placeholder="Search..."/><button>
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
@@ -42,10 +42,10 @@
             <div id="profile-btn-nav" class="hidden-max-768">
                 <a href="profile.html"><i class="fa fa-user" aria-hidden="true"></i></a>
             </div>
-            <div id="camera-btn-nav" class="hidden-max-768">
+            <form id="camera-btn-nav" class="hidden-max-768" action="">
                 <input type="file" accept="image/*" name="uploadImg" id="uploadImg"></input>
                 <label for="uploadImg"><i class="fa fa-camera" aria-hidden="true"></i></label>
-            </div>
+            </form>
         </nav>
     </div>
     
@@ -116,10 +116,10 @@
             <div id="search-btn">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </div>
-            <div id="camera-btn">
+            <form action="">
                 <input type="file" accept="image/*" name="uploadImg" id="uploadImg"></input>
-                <label for="uploadImg"><i class="fa fa-camera" aria-hidden="true"></i></label>
-            </div>
+                <label for="uploadImg"><i class="fa fa-camera" id="camera-btn" aria-hidden="true"></i></label>
+            </form>
             <div id="notification-btn">
                 <i class="fa fa-heart-o" aria-hidden="true"></i>
             </div>
@@ -127,6 +127,22 @@
                 <a href="profile.html"><i class="fa fa-user" aria-hidden="true"></i></a>
             </div>
         </nav>
+    </div>
+    <!-- Modal -->
+    <div id="modal-container" class="modal">
+        <div class="modal-content">
+            <div id="modal-nav">
+                <span id="modal-nav-title"><strong>New Post</strong></span>
+                <span class="close">&times;</span>
+            </div>
+            <div id="modal-input">
+                <textarea name="caption" id="caption" cols="30" rows="10" maxlength="200" placeholder="How adorable your angel is?"></textarea>
+                <img src="resources/img/baby-1.jpeg" alt="uploadImg">
+            </div>
+            <div id="post-btn-modal">
+                <button>Post</button>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="resources/js/home.js"></script>
 </body>
