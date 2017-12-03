@@ -3,25 +3,44 @@
 ***************************************************  */
 
 
-var modal = document.getElementById("modal-container");
+const modal = document.getElementById("modal-container");
+const inputCaption = document.getElementById("input-caption");
 
-var cameraBtn = document.getElementById("camera-btn");
-var cameraBtnNav = document.getElementById("camera-btn-nav");
+const inputImg = document.getElementById("uploadImg");
 
-var closeBtn = document.getElementsByClassName("close")[0];
+const closeBtn = document.getElementsByClassName("close")[0];
 
-cameraBtn.onclick = function() {
+let image = document.getElementById("modal-input").getElementsByTagName("img")[0];
+
+inputImg.addEventListener("change", (event) => {
+    
+    var file = event.target.files[0];
+
+    var reader = new FileReader();
+
+    // Closure to capture the file information.
+    reader.onload = (event) => {
+        image.src = event.target.result;
+    };
+
+    // Read in the image file as a data URL.
+    reader.readAsDataURL(file);
+
     modal.style.display = "block";
-}
-cameraBtnNav.onclick = function() {
-    modal.style.display = "block";
+});
+
+function closeModal() {
+    modal.style.display = "none";
+    inputCaption.value = "";
+    inputImg.value = "";
+    image.src = "";
 }
 
 closeBtn.onclick = function() {
-    modal.style.display = "none";
+    closeModal();
 }
 window.onclick = function(event) {
     if (event.target === modal) {
-        modal.style.display = "none";
+        closeModal();
     }
 }

@@ -338,7 +338,7 @@ strong {
     height: 100%;
     overflow: auto;
     background-color: #000000;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content {
     background-color: #ffffff;
@@ -396,26 +396,34 @@ strong {
 }
 #modal-input img {
     position: absolute;
-    width: 20%;
+    max-width: 20%;
+    max-height: 100%;
     top: 5px;
+    right: 0;
     display: inline-block;
 }
-#post-btn-modal {
-    text-align: right;
+#post-footer-modal {
+    position: relative;
     padding-top: 10px;
     margin-top: 20px;
     border-top: 1px solid #eeeeee;
 }
-#post-btn-modal button {
+#post-footer-modal * {
+    display: inline-block;
     font-size: 16px;
-    padding: 5px 10px;
+}
+#post-footer-modal button {
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+    padding: 5px 30px;
     border-radius: 5px;
     background-color: #02ccba;
     color: #ffffff;
     border: 0;
 }
-#post-btn-modal button:hover,
-#post-btn-modal button:focus {
+#post-footer-modal button:hover,
+#post-footer-modal button:focus {
     background-color: #03bdaa;
     outline: none;
 }
