@@ -226,7 +226,7 @@ input {
 	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
 	color: #fff;
 	font-size: 24px;
-	border: 1px solid rgb(28, 108, 122);
+	border: 0;
 	margin-bottom: 10px;
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 	border-radius: 3px;
