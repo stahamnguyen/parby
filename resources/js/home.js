@@ -38,12 +38,12 @@ function closeModal() {
 
 closeBtn.onclick = function() {
     closeModal();
-}
+};
 window.onclick = function(event) {
     if (event.target === modal) {
         closeModal();
     }
-}
+};
 
 
 /*  ***************************************************
@@ -51,7 +51,7 @@ window.onclick = function(event) {
 ***************************************************  */
 
 
-const commentBtnArray = [...document.getElementsByClassName("comment-btn")];
+let commentBtnArray = [...document.getElementsByClassName("comment-btn")];
 
 commentBtnArray.forEach(element => {
     element.addEventListener("click", () => {
@@ -64,4 +64,24 @@ commentBtnArray.forEach(element => {
     });
 });
 
+
+/*  ***************************************************
+            Display delete post dropdown
+***************************************************  */
+
+let optionButtonArray = [...document.getElementsByClassName("post-option-btn")];
+let optionButtonIconArray = [...document.getElementsByClassName("post-option-btn-icon")];
+let dropdownArray = [...document.getElementsByClassName("dropdown")];
+
+optionButtonArray.forEach(element => {
+    let dropdown = dropdownArray[optionButtonArray.indexOf(element)];
+
+    element.addEventListener("click", () => {
+        dropdown.classList.toggle("hidden");
+    });
+
+    element.addEventListener("focusout", () => {
+        dropdown.classList.add("hidden");
+    });
+});
 

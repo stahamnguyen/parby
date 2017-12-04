@@ -213,7 +213,7 @@ Post
   font-size: 14px;
   color: #555555;
 }
-.post-avatar, .post-user-info, .post-detail-btn {
+.post-avatar, .post-user-info, .post-option-section {
   display: inline-block;
 }
 .post-avatar {
@@ -234,9 +234,43 @@ Post
   text-decoration: underline;
   color: #02B3E4;
 }
-.post-detail-btn {
+.post-option-section {
   float: right;
+  position: relative;
   font-size: 20px;
+  text-align: right;
+}
+.post-option-section button {
+  border: 0;
+  outline: none;
+}
+.dropdown {
+  position: absolute;
+  width: max-content;
+  right: 0;
+  text-align: left;
+  font-size: 14px;
+  border: 1px solid #eeeeee;
+  z-index: 10;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px #888888;
+}
+.dropdown button {
+  padding: 5px;
+  border-bottom: 1px solid #eeeeee;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+}
+.dropdown:last-child {
+  border-bottom: 0;
+}
+.dropdown button:hover {
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+.dropdown i:hover {
+  color: #555555;
 }
 
 /* Image */
