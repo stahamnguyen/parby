@@ -65,6 +65,9 @@ a {
 strong {
   font-weight: bold;
 }
+.hidden {
+  display: none;
+}
 
 
 /*  ***************************************************
@@ -300,6 +303,30 @@ Post
   padding: 15px;
   font-size: 14px;
 }
+
+/* Comment */
+
+.comment-section {
+  margin: 0 15px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  line-height: 21px;
+}
+.comment-input-section {
+  margin: 0 15px;
+  padding: 10px 0 7px 0;
+  border-top: 1px solid #eeeeee;
+}
+.comment-input {
+  resize: none;
+  width: 100%;
+  font-size: 14px;
+  height: 20px;
+  border: 0;
+  outline: none;
+}
+
+
 
 
 /*  ***************************************************

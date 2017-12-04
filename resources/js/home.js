@@ -14,9 +14,9 @@ let image = document.getElementById("modal-input").getElementsByTagName("img")[0
 
 inputImg.addEventListener("change", (event) => {
     
-    var file = event.target.files[0];
+    let file = event.target.files[0];
 
-    var reader = new FileReader();
+    let reader = new FileReader();
 
     // Closure to capture the file information.
     reader.onload = (event) => {
@@ -44,3 +44,24 @@ window.onclick = function(event) {
         closeModal();
     }
 }
+
+
+/*  ***************************************************
+                Display comment
+***************************************************  */
+
+
+const commentBtnArray = [...document.getElementsByClassName("comment-btn")];
+
+commentBtnArray.forEach(element => {
+    element.addEventListener("click", () => {
+        let post = element.parentNode.parentNode;
+        let commentSection = post.getElementsByClassName("comment-section")[0];
+        let commentInputSection = post.getElementsByClassName("comment-input-section")[0];
+        
+        commentSection.classList.toggle("hidden");
+        commentInputSection.classList.toggle("hidden");
+    });
+});
+
+
