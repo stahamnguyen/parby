@@ -54,11 +54,11 @@
     <!-- Avatar - Bio -->
     <section id="displayInfo" class="container-fluid">
       <div class="row">
-        <div class="span-2-of-12"></div>
-        <div class="span-4-of-12">
+        <div class="col span-2-of-12"></div>
+        <div class="col span-4-of-12">
           <img src="resources/img/avatar1.jpeg" alt="avatar" id="avatar">
        </div>
-       <div id="bio" class="span-6-of-12">
+       <div id="bio" class="col span-6-of-12">
           <div id="username">maria_smith89</div>
           <div id="stats">
             <div><span><strong>20</strong></span> Albums</div>
@@ -67,7 +67,13 @@
           </div>
           <div id="name">Maria Smith</div>
           <div id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          <div><button type="submit" id="addAlbum" class="btnAdd"><i class="fa fa-plus"></i> Add Album</button></div>
+          <div>
+            <button class="btnAdd-full">
+              <form id="" action="">
+                  <input type="file" accept="image/*" name="uploadAlbum" id="addAlbum"></input>
+                  <label for="addAlbum"><i class="fa fa-plus" aria-hidden="true"></i> Add Album</label>
+              </form>
+        </button></div>
        </div>
      </div>
    </section>
@@ -114,7 +120,7 @@
     </section>
 
     <!-- Tabbar -->
-    <<div id="tabbar" class="sticky bar hidden-min-768">
+    <div id="tabbar" class="sticky bar hidden-min-768">
         <nav>
             <div id="home-btn">
                 <a href="home.html"><i class="fa fa-home" aria-hidden="true"></i></a>
@@ -133,5 +139,31 @@
             </div>
         </nav>
     </div>
+
+
+    <!-- Add Album Modal -->
+    <div id="modal-addAlbum" class="modal">
+      <div class="modal-content">
+        <div id="modal-nav">
+          <span id="modal-nav-title"><strong>New Album</strong></span>
+          <span class="close" id="closeAlbumModal">&times;</span>
+        </div>
+        <div id="modal-input">
+          <textarea name="albumName" id="albumName" cols="10" rows="1" maxlength="50" placeholder="Album Name"></textarea>
+          <textarea name="caption" id="input-caption" cols="30" rows="10" maxlength="200" placeholder="How adorable your angel is?"></textarea>
+          <p>Album Cover</p>
+          <img src="#" alt="">
+        </div>
+        <div id="post-footer-modal">
+          <p>Privacy:</p>
+          <select name="privacy" id="privacy" required>
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+          </select>
+          <button>Post</button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="resources/js/profilePage.js"></script>
 </body>
 </html>

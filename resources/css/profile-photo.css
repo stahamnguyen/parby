@@ -22,6 +22,15 @@ Profile Page
   padding: 3px;
 }
 
+.btnAdd-full {
+  background: #02CCBA;
+  border: 2px solid #02CCBA;
+  color: #fff;
+  padding: 3px;
+  width: 100%;
+  margin-top: 7px;
+}
+
 #addImage{
   display: none;
 }
@@ -101,45 +110,6 @@ Profile Page
   display: block;
 }
 
-div.gallery {
-  border: 1px solid #ccc;
-  height: auto;
-  width: auto;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 10px;
-  text-align: center;
-}
-
-.responsive {
-  padding: 3px 6px;
-  float: left !important;
-  width: 33.3333%;
-}
-
-@media only screen and (max-width: 700px){
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px){
-  .responsive {
-    width: 100%;
-  }
-}
-
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -157,6 +127,14 @@ div.desc {
   width: 450px;
   max-width: 100%;
   height: 450px;
+  transform: scale(1.00);
+  transition: transform 0.5s, opacity 0.5s;
+  opacity: 0.8;
+}
+
+.media img:hover {
+  opacity: 1;
+  transform: scale(1.03);
 }
 
 .media h2 {
@@ -173,6 +151,23 @@ div.desc {
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.7);
   padding: 10px;
+}
+
+/*Modal Edit*/
+#albumName {
+  height: 50px !important;
+}
+
+#modal-input p {
+  position: absolute;
+  display: inline-block;
+  font-size: 12px;
+  top: 10px;
+  right: 0;
+}
+
+#modal-input p + img {
+  top: 24px !important;
 }
 
 
@@ -224,6 +219,117 @@ hr{
 }
 
 #addAlbum {
+  display: none;
+}
+
+/* Modal Picture */
+
+.modal-container {
+  padding: 0 !important;
+  width: 80% !important;
+}
+
+.modal-container img {
   width: 100%;
-  margin-top: 10px;
+  max-height: 500px;
+}
+
+/* Queries */
+
+@media only screen and (max-width: 786px){
+  .photo-showcase li {
+    width: 33.33%;
+  }
+}
+
+@media only screen and (max-width: 576px){
+  .photo-showcase li {
+    width: 100%;
+  }
+}
+
+#myImg {
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-photo {
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    margin: 5% auto;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-photo, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+/*.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}*/
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
 }

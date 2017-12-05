@@ -54,11 +54,11 @@
   <!-- Avatar - Bio -->
   <section id="displayInfo" class="container-fluid">
     <div class="row">
-      <div class="span-2-of-12"></div>
-      <div class="span-4-of-12">
+      <div class="col span-2-of-12"></div>
+      <div class="col span-4-of-12">
         <img src="resources/img/avatar1.jpeg" alt="avatar" id="avatar">
       </div>
-      <div id="bio" class="span-6-of-12">
+      <div id="bio" class="col span-6-of-12">
         <div id="username">maria_smith89</div>
         <div id="stats">
           <div><strong>20</strong> Albums</div>
@@ -89,42 +89,42 @@
       <ul class="photo-showcase">
         <li>
           <figure class="album-photo">
-            <img src="resources/img/baby.jpeg">
+            <img src="resources/img/baby.jpeg" id="img1">
           </figure>
         </li>
         <li>
           <figure class="album-photo">
-            <img src="resources/img/baby-1.jpeg">
+            <img src="resources/img/baby-1.jpeg" id="img">
           </figure>
         </li>
         <li>
           <figure class="album-photo">
-            <img src="resources/img/baby.jpeg">
+            <img src="resources/img/baby.jpeg" id="img">
           </figure>
         </li>
         <li>
           <figure class="album-photo">
-            <img src="resources/img/baby-1.jpeg">
+            <img src="resources/img/baby-1.jpeg" id="img">
           </figure>
         </li>
         <li>
           <figure class="album-photo">
-            <img src="resources/img/baby.jpeg">
+            <img src="resources/img/baby.jpeg" id="img">
           </figure>
         </li>
         <li>
           <figure class="album-photo">
-            <img src="resources/img/baby-1.jpeg">
+            <img src="resources/img/baby-1.jpeg" id="img">
           </figure>
         </li>
         <li>
           <figure class="album-photo">
-            <img src="resources/img/baby-2.jpeg">
+            <img src="resources/img/baby-2.jpeg" id="img">
           </figure>
         </li>
         <li>
           <figure class="album-photo">
-            <img src="resources/img/baby-1.jpeg">
+            <img src="resources/img/baby-1.jpeg" id="img">
           </figure>
         </li>
       </ul>
@@ -175,6 +175,14 @@
       </div>
     </div>
   </div>
+
+  <!-- Picture Modal -->
+  <div id="imgModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-photo" id="img01">
+    <div id="caption"></div>
+  </div>
+
   <script type="text/javascript" src="resources/js/photo.js"></script>
 </body>
 </html>

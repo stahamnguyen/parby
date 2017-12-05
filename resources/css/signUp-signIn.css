@@ -345,7 +345,42 @@ p.change_link{
 	animation-name: fadeOutLeft;
 }
 
-/** the actual animation, credit where due : http://daneden.me/animate/ ***/
+/** Animate ***/
+
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.fadeInLeft {
+	animation-name: fadeInLeft;
+}
+
+
+@keyframes fadeOutLeft {
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+}
+
+.fadeOutLeft {
+	animation-name: fadeOutLeft;
+}
+
+
 .animate{
 	animation-duration: 0.5s;
 	animation-timing-function: ease;
