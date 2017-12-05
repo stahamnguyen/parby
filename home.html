@@ -50,7 +50,7 @@
     </div>
     
     <!-- Post -->
-    <div class="container container-padding">
+    <div id="container" class="container-padding">
         <div class="post">
             <div class="post-header">
                 <div>
@@ -60,7 +60,12 @@
                     <a href="profile.html"><strong>amanda</strong></a>
                     <div>Helsinki</div>
                 </div>
-                <div class="post-detail-btn"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+                <div class="post-option-section">
+                    <button class="post-option-btn"><i class="fa fa-ellipsis-h post-option-btn-icon" aria-hidden="true"></i></button>
+                    <div class="dropdown hidden">
+                        <button class="post-delete-btn"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete post</button><br>
+                    </div>
+                </div>
             </div>
             <div class="post-img-content">
                 <img src="resources/img/baby-1.jpeg" alt="image-content">
@@ -93,7 +98,12 @@
                     <a href="profilePage.html"><strong>amanda</strong></a>
                     <div>Helsinki</div>
                 </div>
-                <div class="post-detail-btn"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+                <div class="post-option-section">
+                    <button class="post-option-btn"><i class="fa fa-ellipsis-h post-option-btn-icon" aria-hidden="true"></i></button>
+                    <div class="dropdown hidden">
+                        <button class="post-delete-btn"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete post</button><br>
+                    </div>
+                </div>
             </div>
             <div class="post-img-content">
                 <img src="resources/img/baby-1.jpeg" alt="image-content">
@@ -158,7 +168,7 @@
                     <option value="2017">2017</option>
                     <option value="vacation">Vacation</option>
                 </select>
-                <button>Post</button>
+                <button id="post-btn">Post</button>
             </div>
         </div>
     </div>
