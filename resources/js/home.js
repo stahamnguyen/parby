@@ -47,6 +47,14 @@ window.onclick = function(event) {
 
 
 /*  ***************************************************
+                    Post image
+***************************************************  */
+
+
+
+
+
+/*  ***************************************************
                 Display comment
 ***************************************************  */
 
@@ -69,6 +77,7 @@ commentBtnArray.forEach(element => {
             Display delete post dropdown
 ***************************************************  */
 
+let deleteButtonArray = [...document.getElementsByClassName("post-delete-btn")];
 let optionButtonArray = [...document.getElementsByClassName("post-option-btn")];
 let optionButtonIconArray = [...document.getElementsByClassName("post-option-btn-icon")];
 let dropdownArray = [...document.getElementsByClassName("dropdown")];
@@ -80,8 +89,23 @@ optionButtonArray.forEach(element => {
         dropdown.classList.toggle("hidden");
     });
 
-    element.addEventListener("focusout", () => {
+    dropdown.addEventListener("focusout", () => {
         dropdown.classList.add("hidden");
     });
 });
 
+
+/*  ***************************************************
+            Delete post dropdown
+***************************************************  */
+
+
+let postsArray = [...document.getElementsByClassName("post")];
+
+deleteButtonArray.forEach(element => {
+    let post = postsArray[deleteButtonArray.indexOf(element)];
+
+    element.addEventListener("click", () => {
+        post.parentNode.removeChild(post);
+    });
+});
