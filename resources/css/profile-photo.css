@@ -251,6 +251,9 @@ hr{
   max-height: 500px;
 }
 
+#imgModal .close {
+  top:auto;
+}
 /* Queries */
 
 @media only screen and (max-width: 786px){

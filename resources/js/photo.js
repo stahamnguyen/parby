@@ -130,6 +130,11 @@ span.onclick = function() {
     imgModal.style.display = "none";
 }
 
+window.onclick = function(event) {
+    if (event.target === imgModal) {
+        imgModal.style.display = "none";
+    }
+}
 /*  ***************************************************
             Display delete post dropdown
 ***************************************************  */
