@@ -35,7 +35,6 @@ function closeModal() {
     inputImg.value = "";
     image.src = "";
 }
-
 closeBtn.onclick = function() {
     closeModal();
 };
@@ -44,6 +43,8 @@ window.onclick = function(event) {
         closeModal();
     }
 };
+
+
 
 
 /*  ***************************************************
@@ -100,9 +101,9 @@ postBtn.addEventListener("click", () => {
 
     container.innerHTML = postHtml + container.innerHTML;
     closeModal();
-    mapCommentButton();
-    mapPostOptionButton();
-    mapDeletePostButton();
+    mapCommentBtn();
+    mapPostOptionBtn();
+    mapDeletePostBtn();
 });
 
 
@@ -110,7 +111,7 @@ postBtn.addEventListener("click", () => {
                 Display comment
 ***************************************************  */
 
-let mapCommentButton = () => {
+let mapCommentBtn = () => {
     let commentBtnArray = [...document.getElementsByClassName("comment-btn")];
 
     commentBtnArray.forEach(element => {
@@ -125,7 +126,7 @@ let mapCommentButton = () => {
     });
 };
 
-mapCommentButton();
+mapCommentBtn();
 
 
 /*  ***************************************************
@@ -133,26 +134,45 @@ mapCommentButton();
 ***************************************************  */
 
 
-let mapPostOptionButton = () => {
-    let deleteButtonArray = [...document.getElementsByClassName("post-delete-btn")];
-    let optionButtonArray = [...document.getElementsByClassName("post-option-btn")];
-    let optionButtonIconArray = [...document.getElementsByClassName("post-option-btn-icon")];
+let mapPostOptionBtn = () => {
+    let postOptionSectionArray = [...document.getElementsByClassName("post-option-section")];
+    let deleteBtnArray = [...document.getElementsByClassName("post-delete-btn")];
+    let optionBtnArray = [...document.getElementsByClassName("post-option-btn")];
+    let optionBtnIconArray = [...document.getElementsByClassName("post-option-btn-icon")];
     let dropdownArray = [...document.getElementsByClassName("dropdown")];
 
-    optionButtonArray.forEach(element => {
-        let dropdown = dropdownArray[optionButtonArray.indexOf(element)];
+    optionBtnArray.forEach(element => {
+        let dropdown = dropdownArray[optionBtnArray.indexOf(element)];
+        let postOptionSection = postOptionSectionArray[optionBtnArray.indexOf(element)];
 
         element.addEventListener("click", () => {
             dropdown.classList.toggle("hidden");
         });
 
-        dropdown.addEventListener("focusout", () => {
-            dropdown.classList.add("hidden");
+        let notHover = 1;
+
+        dropdown.addEventListener("mouseover", () => {
+            notHover = 0;
+            console.log(!!notHover);
+        });
+        dropdown.addEventListener("mouseleave", () => {
+            notHover = 1;
+            console.log(!!notHover);
+        });
+        document.addEventListener("mouseup", () => {
+            if(!!notHover) {
+                dropdown.classList.add("hidden");
+            }
+        });
+        document.addEventListener("keyup", (event) => {
+            if(event.which == 27) {
+                dropdown.classList.add("hidden");
+            }
         });
     });
 };
 
-mapPostOptionButton();
+mapPostOptionBtn();
 
 
 /*  ***************************************************
@@ -160,17 +180,17 @@ mapPostOptionButton();
 ***************************************************  */
 
 
-let mapDeletePostButton = () => {
+let mapDeletePostBtn = () => {
     let postsArray = [...document.getElementsByClassName("post")];
-    let deleteButtonArray = [...document.getElementsByClassName("post-delete-btn")];
+    let deleteBtnArray = [...document.getElementsByClassName("post-delete-btn")];
 
-    deleteButtonArray.forEach(element => {
-        let post = postsArray[deleteButtonArray.indexOf(element)];
+    deleteBtnArray.forEach(element => {
+        let post = postsArray[deleteBtnArray.indexOf(element)];
 
-        element.addEventListener("click", () => {
+        element.addEventListener("click", (event) => {
             post.parentNode.removeChild(post);
         });
     });
 };
 
-mapDeletePostButton();
+mapDeletePostBtn();
