@@ -87,17 +87,17 @@ const showcase = document.getElementById("showcase");
 
 postBtn.addEventListener("click", () => {
 
-    const postHtml = '<li>\
-                        <figure class="album-photo">\
-                          <img src="'+ image.src + '" id="img1">\
-                        </figure>\
+    const postHtml = '<div class="album-photo">\
+                        <a target="_blank" href="photoPage.html">\
+                          <img src="'+ image.src + '" alt="avatar">\
+                        </a>\
                         <div class="photo-option-section">\
                             <button class="photo-option-btn"><i class="fa fa-ellipsis-h photo-option-btn-icon" aria-hidden="true"></i></button>\
                             <div class="dropdown hidden">\
                                 <button class="photo-delete-btn"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete Photo</button><br>\
                             </div>\
                         </div>\
-                      </li>'
+                      </div>'
 
 
     showcase.innerHTML = postHtml + showcase.innerHTML;
@@ -112,17 +112,23 @@ postBtn.addEventListener("click", () => {
 ***************************************************  */
 const imgModal = document.getElementById('imgModal');
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
+// Get the image and insert it inside the modal
 const img = document.getElementById('img1');
 const modalImg = document.getElementById("img01");
-const captionText = document.getElementById("caption");
-img.onclick = function(){
-    imgModal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
+let photoArray = [...document.getElementsByClassName("photo")];
+console.log(photoArray);
+console.log(modalImg.src);
 
-// Get the <span> element that closes the modal
+
+photoArray.forEach(function(photo){
+  photo.addEventListener('click', function() {
+    imgModal.style.display="block";
+    modalImg.src = this.src;
+  })
+})
+
+
+//Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[1];
 
 // When the user clicks on <span> (x), close the modal
@@ -195,13 +201,13 @@ mapPhotoOptionBtn();
 
 
 let mapDeletePhotoBtn = () => {
-    let photoFrameArray = [...document.getElementsByClassName("photo-frame")];
+    let albumPhotoArray = [...document.getElementsByClassName("album-photo")];
     let deleteBtnArray = [...document.getElementsByClassName("photo-delete-btn")];
 
     deleteBtnArray.forEach(element => {
-        let photoFrame = photoFrameArray[deleteBtnArray.indexOf(element)];
+        let albumPhoto = albumPhotoArray[deleteBtnArray.indexOf(element)];
         element.addEventListener("click", (event) => {
-            photoFrame.parentNode.removeChild(photoFrame);
+            albumPhoto.parentNode.removeChild(albumPhoto);
         });
     });
 };
