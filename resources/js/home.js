@@ -145,7 +145,7 @@ let mapPostOptionBtn = () => {
 
         let notHoverOnOptionBtn = 1;
         let notHoverOnDropdown = 1;
-        
+
         element.addEventListener("click", () => {
             dropdown.classList.toggle("hidden");
         });
