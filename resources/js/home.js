@@ -143,9 +143,9 @@ let mapPostOptionBtn = () => {
     optionBtnArray.forEach(element => {
         let dropdown = dropdownArray[optionBtnArray.indexOf(element)];
 
-        let notHoverOnOptionBtn = 1;
-        let notHoverOnDropdown = 1;
-        
+        let notHoverOnOptionBtn = true;
+        let notHoverOnDropdown = true;
+
         element.addEventListener("click", () => {
             dropdown.classList.toggle("hidden");
         });
@@ -153,24 +153,24 @@ let mapPostOptionBtn = () => {
         //Check if the mouse is hovering on the dropdown or not
 
         dropdown.addEventListener("mouseover", () => {
-            notHoverOnDropdown = 0;
+            notHoverOnDropdown = false;
         });
         dropdown.addEventListener("mouseleave", () => {
-            notHoverOnDropdown = 1;
+            notHoverOnDropdown = true;
         });
 
         //Check if the mouse is hovering on the option btn or not
 
         element.addEventListener("mouseover", () => {
-            notHoverOnOptionBtn = 0;
+            notHoverOnOptionBtn = false;
         });
         element.addEventListener("mouseleave", () => {
-            notHoverOnOptionBtn = 1;
+            notHoverOnOptionBtn = true;
         });
 
         //If the mouse is clicked
-        document.addEventListener("mouseup", (event) => {
-            if(!!notHoverOnDropdown && !!notHoverOnOptionBtn) { //If the mouse is not hovered on the dropdown
+        document.addEventListener("mouseup", () => {
+            if(notHoverOnDropdown && notHoverOnOptionBtn) { //If the mouse is not hovered on the dropdown
                 dropdown.classList.add("hidden");
             }
         });
