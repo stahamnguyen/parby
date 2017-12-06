@@ -13,7 +13,7 @@ const closeBtn = document.getElementsByClassName("close")[0];
 let image = document.getElementById("modal-input").getElementsByTagName("img")[0];
 
 inputImg.addEventListener("change", (event) => {
-    
+
     let file = event.target.files[0];
 
     let reader = new FileReader();
@@ -57,7 +57,7 @@ const container = document.getElementById("container");
 
 postBtn.addEventListener("click", () => {
 
-    const postHtml = 
+    const postHtml =
                     '<div class="post">\
                         <div class="post-header">\
                             <div>\
@@ -115,13 +115,13 @@ postBtn.addEventListener("click", () => {
 
 let mapCommentBtn = () => {
     let commentBtnArray = [...document.getElementsByClassName("comment-btn")];
-    
+
     commentBtnArray.forEach(element => {
         element.addEventListener("click", () => {
             let post = element.parentNode.parentNode;
             let commentSection = post.getElementsByClassName("comment-section")[0];
             let commentInputSection = post.getElementsByClassName("comment-input-section")[0];
-            
+
             commentSection.classList.toggle("hidden");
             commentInputSection.classList.toggle("hidden");
         });
@@ -139,14 +139,13 @@ mapCommentBtn();
 let mapPostOptionBtn = () => {
     let optionBtnArray = [...document.getElementsByClassName("post-option-btn")];
     let dropdownArray = [...document.getElementsByClassName("dropdown")];
-    
+
     optionBtnArray.forEach(element => {
         let dropdown = dropdownArray[optionBtnArray.indexOf(element)];
 
         let notHoverOnOptionBtn = 1;
         let notHoverOnDropdown = 1;
         
-        //Display dropdown when post option btn is clicked
         element.addEventListener("click", () => {
             dropdown.classList.toggle("hidden");
         });
@@ -194,7 +193,7 @@ mapPostOptionBtn();
 let mapDeletePostBtn = () => {
     let postsArray = [...document.getElementsByClassName("post")];
     let deleteBtnArray = [...document.getElementsByClassName("post-delete-btn")];
-    
+
     deleteBtnArray.forEach(element => {
         let post = postsArray[deleteBtnArray.indexOf(element)];
 

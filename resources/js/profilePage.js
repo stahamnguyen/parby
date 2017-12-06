@@ -1,13 +1,17 @@
 /*  ***************************************************
-                Display modal form
+                Select Elements
 ***************************************************  */
-const addAlbumModal = document.getElementById("modal-addAlbum");
 
+const addAlbumModal = document.getElementById("modal-addAlbum");
+const inputAlbumName = document.getElementById("albumName");
 const inputAlbum = document.getElementById("addAlbum");
 const closeAlbum = document.getElementById("closeAlbumModal");
 let albumCover = document.getElementById("modal-input").getElementsByTagName("img")[0];
 
-/* Create Album */
+
+/*  ***************************************************
+                Create Album
+***************************************************  */
 
 inputAlbum.addEventListener("change", (event) => {
 
@@ -29,7 +33,39 @@ inputAlbum.addEventListener("change", (event) => {
 });
 
 
-/* Close Album Modal */
+/*  ***************************************************
+                Close Album Modal
+***************************************************  */
+
 closeAlbum.onclick = function() {
     addAlbumModal.style.display = "none";
 }
+
+function closeModal() {
+    addAlbumModal.style.display = "none";
+    inputAlbumName.value = "";
+    inputAlbum.value = "";
+    albumCover.src = "";
+}
+
+/*  ***************************************************
+                    New Album Added To Screen
+***************************************************  */
+
+
+const createBtn = document.getElementById("create");
+const displayAlbum = document.getElementById("displayAlbum");
+
+createBtn.addEventListener("click", () => {
+
+    const postHtml ='<div class="media">\
+                      <a target="_blank" href="photoPage.html">\
+                        <img src="'+ albumCover.src + '" alt="avatar">\
+                      </a>\
+                      <h2><span>' + inputAlbumName.value + '</span></h2>\
+                    </div>'
+
+
+    displayAlbum.innerHTML = postHtml + displayAlbum.innerHTML;
+    closeModal();
+});

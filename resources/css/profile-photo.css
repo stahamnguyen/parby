@@ -58,10 +58,7 @@ Profile Page
   color: #757575;
   list-style: none;
   vertical-align: middle;
-}
-
-#stats span {
-  font-size: 1.5rem;
+  margin-right: 7px;
 }
 
 #username, #name {
@@ -88,7 +85,6 @@ Profile Page
 
 .container-fluid {
   position: relative;
-  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   padding-right: 15px;
@@ -332,4 +328,61 @@ hr{
     .modal-content {
         width: 100%;
     }
+}
+
+.photo-frame {
+  position: relative;
+}
+
+.photo-option-section {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.photo-option-section button {
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  visibility: hidden;
+}
+
+/* when hover photo-frame, the option button is visible */
+.photo-frame:hover > .photo-option-section button { visibility: visible;}
+
+
+/* dropdown menu  */
+.dropdown {
+  position: absolute;
+  width: max-content;
+  right: 0;
+  text-align: left;
+  font-size: 14px;
+  border: 1px solid #eeeeee;
+  z-index: 10;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px #888888;
+}
+
+.dropdown button {
+  padding: 10px;
+  border-bottom: 1px solid #eeeeee;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+}
+
+.dropdown:last-child {
+  border-bottom: 0;
+}
+
+.dropdown button:hover {
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+
+.dropdown i:hover {
+  color: #555555;
 }
