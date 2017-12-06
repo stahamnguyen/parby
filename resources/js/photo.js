@@ -121,3 +121,76 @@ const span = document.getElementsByClassName("close")[1];
 span.onclick = function() {
     imgModal.style.display = "none";
 }
+
+/*  ***************************************************
+            Display delete post dropdown
+***************************************************  */
+
+
+let mapPostOptionBtn = () => {
+    let optionBtnArray = [...document.getElementsByClassName("photo-option-btn")];
+    let dropdownArray = [...document.getElementsByClassName("dropdown")];
+
+    optionBtnArray.forEach(element => {
+        let dropdown = dropdownArray[optionBtnArray.indexOf(element)];
+
+        let notHoverOnOptionBtn = true;
+        let notHoverOnDropdown = true;
+
+        element.addEventListener("click", () => {
+            dropdown.classList.toggle("hidden");
+        });
+
+        //Check if the mouse is hovering on the dropdown or not
+
+        dropdown.addEventListener("mouseover", () => {
+            notHoverOnDropdown = false;
+        });
+        dropdown.addEventListener("mouseleave", () => {
+            notHoverOnDropdown = true;
+        });
+
+        //Check if the mouse is hovering on the option btn or not
+
+        element.addEventListener("mouseover", () => {
+            notHoverOnOptionBtn = false;
+        });
+        element.addEventListener("mouseleave", () => {
+            notHoverOnOptionBtn = true;
+        });
+
+        //If the mouse is clicked
+        document.addEventListener("mouseup", () => {
+            if(notHoverOnDropdown && notHoverOnOptionBtn) { //If the mouse is not hovered on the dropdown
+                dropdown.classList.add("hidden");
+            }
+        });
+        document.addEventListener("keyup", (event) => {
+            if(event.which == 27) { //If ESC btn is pressed
+                dropdown.classList.add("hidden");
+            }
+        });
+    });
+};
+
+mapPostOptionBtn();
+
+
+/*  ***************************************************
+                    Delete post
+***************************************************  */
+
+
+let mapDeletePostBtn = () => {
+    let photoFrameArray = [...document.getElementsByClassName("photo-frame")];
+    let deleteBtnArray = [...document.getElementsByClassName("photo-delete-btn")];
+
+    deleteBtnArray.forEach(element => {
+        let photoFrame = photoFrameArray[deleteBtnArray.indexOf(element)];
+        element.addEventListener("click", (event) => {
+            photoFrame.parentNode.removeChild(photoFrame);
+        });
+    });
+};
+
+mapDeletePostBtn();
