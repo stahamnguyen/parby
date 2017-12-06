@@ -47,6 +47,11 @@ i:hover {
 a {
   text-decoration: none;
 }
+
+button {
+  outline: none;
+}
+
 @media only screen and (min-width: 768px) {
   .hidden-min-768 {
     display: none;

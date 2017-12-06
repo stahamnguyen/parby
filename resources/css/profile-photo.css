@@ -35,6 +35,15 @@ Profile Page
   display: none;
 }
 
+.btnAdd:hover, .btnAdd-full:hover {
+  background-color: #03bdaa;
+}
+
+.btnEdit:hover {
+  background-color: #888888;
+  color: #fff;
+}
+
 .btnEdit {
   background: #fff;
   border: 2px solid #5f5f5f;
@@ -174,9 +183,20 @@ Photo's Page
   padding: 0;
 }
 
+#showcase {
+  max-width: 1068px;
+  margin: 0 auto;
+  background-size: cover;
+}
+
 .photo-showcase {
   list-style: none;
   width: 100%;
+}
+
+.photo-frame {
+  width: auto;
+  height: auto;
 }
 
 .photo-showcase li {
@@ -186,7 +206,8 @@ Photo's Page
 }
 
 .album-photo {
-  width: 100%;
+  width: auto;
+  height:auto;
   margin: 0;
   overflow: hidden;
   background-color: #000;

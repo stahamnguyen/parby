@@ -91,11 +91,19 @@ postBtn.addEventListener("click", () => {
                         <figure class="album-photo">\
                           <img src="'+ image.src + '" id="img1">\
                         </figure>\
+                        <div class="photo-option-section">\
+                            <button class="photo-option-btn"><i class="fa fa-ellipsis-h photo-option-btn-icon" aria-hidden="true"></i></button>\
+                            <div class="dropdown hidden">\
+                                <button class="photo-delete-btn"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete Photo</button><br>\
+                            </div>\
+                        </div>\
                       </li>'
 
 
     showcase.innerHTML = postHtml + showcase.innerHTML;
     closeModal();
+    mapPhotoOptionBtn();
+    mapDeletePhotoBtn();
 });
 
 
@@ -127,7 +135,7 @@ span.onclick = function() {
 ***************************************************  */
 
 
-let mapPostOptionBtn = () => {
+let mapPhotoOptionBtn = () => {
     let optionBtnArray = [...document.getElementsByClassName("photo-option-btn")];
     let dropdownArray = [...document.getElementsByClassName("dropdown")];
 
@@ -173,7 +181,7 @@ let mapPostOptionBtn = () => {
     });
 };
 
-mapPostOptionBtn();
+mapPhotoOptionBtn();
 
 
 /*  ***************************************************
@@ -181,7 +189,7 @@ mapPostOptionBtn();
 ***************************************************  */
 
 
-let mapDeletePostBtn = () => {
+let mapDeletePhotoBtn = () => {
     let photoFrameArray = [...document.getElementsByClassName("photo-frame")];
     let deleteBtnArray = [...document.getElementsByClassName("photo-delete-btn")];
 
@@ -193,4 +201,4 @@ let mapDeletePostBtn = () => {
     });
 };
 
-mapDeletePostBtn();
+mapDeletePhotoBtn();

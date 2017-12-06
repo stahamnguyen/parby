@@ -17,6 +17,7 @@ html,body {
 	margin:0;
 	padding:0;
 	height: 100%;
+  background: #edf0f5;
 }
 table {
 	border-collapse:collapse;
@@ -83,12 +84,13 @@ a{
 	line-height: 35px;
 	position: relative;
 	font-weight: 400;
-	color: #02b3e4;
+	color: #7cbcd6;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
     padding: 0px 0px 5px 0px;
 }
 .container > header h1 span{
-	color: #7cbcd6;
+	color: #02b3e4;
+  font-size: 1.3em;
 	text-shadow: 0px 1px 1px rgba(255,255,255,0.8);
 }
 .container > header h2{
@@ -213,7 +215,7 @@ input {
     color: #02b3e4;
     position: absolute;
     left: 10px;
-    top: 35px;
+    top: 32px;
 		width: 30px;
 }
 
@@ -226,7 +228,7 @@ input {
 	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
 	color: #fff;
 	font-size: 24px;
-	border: 1px solid rgb(28, 108, 122);
+	border: 0;
 	margin-bottom: 10px;
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 	border-radius: 3px;

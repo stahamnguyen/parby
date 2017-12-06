@@ -48,6 +48,11 @@ function closeModal() {
     albumCover.src = "";
 }
 
+window.onclick = function(event) {
+    if (event.target === addAlbumModal) {
+        closeModal();
+    }
+}
 /*  ***************************************************
                     New Album Added To Screen
 ***************************************************  */
