@@ -100,6 +100,8 @@ postBtn.addEventListener("click", () => {
                     </div>'
 
     container.innerHTML = postHtml + container.innerHTML;
+
+    //Remap all button functionalities
     closeModal();
     mapCommentBtn();
     mapPostOptionBtn();
@@ -135,37 +137,46 @@ mapCommentBtn();
 
 
 let mapPostOptionBtn = () => {
-    let postOptionSectionArray = [...document.getElementsByClassName("post-option-section")];
-    let deleteBtnArray = [...document.getElementsByClassName("post-delete-btn")];
     let optionBtnArray = [...document.getElementsByClassName("post-option-btn")];
-    let optionBtnIconArray = [...document.getElementsByClassName("post-option-btn-icon")];
     let dropdownArray = [...document.getElementsByClassName("dropdown")];
     
     optionBtnArray.forEach(element => {
         let dropdown = dropdownArray[optionBtnArray.indexOf(element)];
-        let postOptionSection = postOptionSectionArray[optionBtnArray.indexOf(element)];
-    
+
+        let notHoverOnOptionBtn = 1;
+        let notHoverOnDropdown = 1;
+        
+        //Display dropdown when post option btn is clicked
         element.addEventListener("click", () => {
             dropdown.classList.toggle("hidden");
         });
 
-        let notHover = 1;
+        //Check if the mouse is hovering on the dropdown or not
 
         dropdown.addEventListener("mouseover", () => {
-            notHover = 0;
-            console.log(!!notHover);
+            notHoverOnDropdown = 0;
         });
         dropdown.addEventListener("mouseleave", () => {
-            notHover = 1;
-            console.log(!!notHover);
+            notHoverOnDropdown = 1;
         });
-        document.addEventListener("mouseup", () => {
-            if(!!notHover) {
+
+        //Check if the mouse is hovering on the option btn or not
+
+        element.addEventListener("mouseover", () => {
+            notHoverOnOptionBtn = 0;
+        });
+        element.addEventListener("mouseleave", () => {
+            notHoverOnOptionBtn = 1;
+        });
+
+        //If the mouse is clicked
+        document.addEventListener("mouseup", (event) => {
+            if(!!notHoverOnDropdown && !!notHoverOnOptionBtn) { //If the mouse is not hovered on the dropdown
                 dropdown.classList.add("hidden");
             }
         });
         document.addEventListener("keyup", (event) => {
-            if(event.which == 27) {
+            if(event.which == 27) { //If ESC btn is pressed
                 dropdown.classList.add("hidden");
             }
         });
