@@ -67,20 +67,21 @@
           </div>
           <div id="name">Maria Smith</div>
           <div id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          <div>
+          <div id="name">
             <button class="btnAdd-full">
-              <form id="" action="">
+              <form id="form-createAlbum" action>
                   <input type="file" accept="image/*" name="uploadAlbum" id="addAlbum"></input>
                   <label for="addAlbum"><i class="fa fa-plus" aria-hidden="true"></i> Add Album</label>
               </form>
-        </button></div>
+            </button>
+          </div>
        </div>
      </div>
    </section>
 
 
     <!-- Album Display -->
-    <section id="displayInfo" class="flex-container">
+    <section id="displayAlbum" class="flex-container">
       <div class="media">
         <a target="_blank" href="photoPage.html">
           <img src="resources/img/baby.jpeg" alt="avatar">
@@ -150,7 +151,7 @@
         </div>
         <div id="modal-input">
           <textarea name="albumName" id="albumName" cols="10" rows="1" maxlength="50" placeholder="Album Name"></textarea>
-          <textarea name="caption" id="input-caption" cols="30" rows="10" maxlength="200" placeholder="How adorable your angel is?"></textarea>
+          <textarea name="caption" id="input-caption" cols="30" rows="10" maxlength="200" placeholder="Album Description"></textarea>
           <p>Album Cover</p>
           <img src="#" alt="">
         </div>
@@ -160,7 +161,7 @@
             <option value="public">Public</option>
             <option value="private">Private</option>
           </select>
-          <button>Post</button>
+          <button id="create">Create</button>
         </div>
       </div>
     </div>
