@@ -147,21 +147,23 @@ let mapPostOptionBtn = () => {
     
         element.addEventListener("click", () => {
             dropdown.classList.toggle("hidden");
-            dropdown.focus();
         });
 
         let notHover = 1;
 
         dropdown.addEventListener("mouseover", () => {
-            notHover ^= 1;
+            notHover = 0;
+            console.log(!!notHover);
         });
-
+        dropdown.addEventListener("mouseleave", () => {
+            notHover = 1;
+            console.log(!!notHover);
+        });
         document.addEventListener("mouseup", () => {
             if(!!notHover) {
                 dropdown.classList.add("hidden");
             }
         });
-
         document.addEventListener("keyup", (event) => {
             if(event.which == 27) {
                 dropdown.classList.add("hidden");
