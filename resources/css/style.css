@@ -22,7 +22,7 @@ section {
 }
 .sticky {
   position: fixed;
-  z-index: 1;
+  z-index: 100;
 }
 .bar {
   height: 40px;
@@ -67,7 +67,6 @@ strong {
 .hidden {
   display: none;
 }
-
 
 /*  ***************************************************
 Navbar
@@ -254,6 +253,7 @@ Post
   z-index: 10;
   background-color: #ffffff;
   box-shadow: 0 0 15px #888888;
+  outline: none;
 }
 .dropdown button {
   padding: 10px;
