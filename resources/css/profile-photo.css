@@ -92,6 +92,10 @@ Profile Page
   margin-bottom: 7px;
 }
 
+#displayAlbum {
+  padding-bottom: 30px;
+}
+
 .container-fluid {
   position: relative;
   margin-left: auto;
@@ -190,6 +194,7 @@ Photo's Page
   max-width: 1208px;
   margin: 0 auto;
   background-size: cover;
+  padding-bottom: 30px;
 }
 
 .album-photo {
