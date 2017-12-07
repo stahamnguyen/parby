@@ -283,8 +283,8 @@ Post
 .post-img-content img {
   width: 100%;
   display: block;
-  border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
 }
 
 /* Interactions */

@@ -204,6 +204,7 @@ Photo's Page
   transform: scale(1.00);
   transition: transform 0.5s, opacity 0.5s;
   opacity: 0.8;
+  object-fit: cover;
 }
 
 .album-photo img:hover {
